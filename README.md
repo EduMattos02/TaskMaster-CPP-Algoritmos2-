@@ -13,14 +13,20 @@ O projeto foi estruturado seguindo o padrão MVC para garantir modularidade e se
 
 ## 🛠️ Instalação e Execução
 
-Para rodar este projeto na sua máquina, você precisará de um compilador C++ (recomendado: G++ / MinGW).
+Para rodar este projeto na sua máquina, você precisará de um compilador C++ (recomendado: G++ / MinGW), ou apenas rodar o arquivo 
+"build_run.bat" que ele já faz a compilação automatica e rodar o sistema.
 
-### Passo 1: Clonar o repositório
-Abra seu terminal e digite:
-```bash
-git clone [https://github.com/EduMattos02/TaskMaster-CPP-Algoritmos2-.git](https://github.com/EduMattos02/TaskMaster-CPP-Algoritmos2-.git)
-cd TaskMaster-CPP-Algoritmos2-
-```
+## 📦 Executar sem Compilar (Windows)
+
+Não quer configurar ambiente ou baixar compiladores? Nós preparamos uma versão portátil para você.
+
+1. Acesse a aba **[Releases](../../releases)** deste repositório.
+2. Baixe o arquivo `taskmaster_portatil.exe`.
+3. Dê dois cliques e o programa rodará imediatamente.
+
+> **Nota:** O executável foi compilado estaticamente, ou seja, já contém todas as bibliotecas necessárias para rodar em qualquer Windows moderno.
+
+---
 
 ```mermaid
 classDiagram
