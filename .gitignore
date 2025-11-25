@@ -1,0 +1,9 @@
+# Ignorar executáveis
+*.exe
+*.o
+
+# Ignorar banco de dados local (opcional, mas recomendado)
+database.txt
+
+# Ignorar pasta do VS Code
+.vscode/
