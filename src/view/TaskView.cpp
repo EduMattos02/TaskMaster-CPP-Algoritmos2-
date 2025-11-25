@@ -1,6 +1,6 @@
 #include "TaskView.h"
 #include <iostream>
-#include <limits> // Para limpar o buffer
+#include <limits>
 
 int TaskView::showMenu() {
     int option;
@@ -22,8 +22,7 @@ Task TaskView::getTaskInput() {
     std::cout << "Digite o ID: ";
     std::cin >> id;
     
-    // Esse ignore é essencial para limpar o 'Enter' do ID antes de ler o Título
-    std::cin.ignore(); 
+std::cin.ignore(); 
 
     std::cout << "Digite o Titulo: ";
     std::getline(std::cin, title);
@@ -31,11 +30,6 @@ Task TaskView::getTaskInput() {
     std::cout << "Digite a Prioridade (1-Alta, 5-Baixa): ";
     std::cin >> priority;
     
-    // IMPORTANTE: Adicione um ignore extra aqui para não pular o waitUser lá na frente
-    // pois sobrará um 'Enter' depois de digitar a prioridade.
-    // MAS ATENÇÃO: Isso pode conflitar se a gente usar ignore no waitUser. 
-    // Vamos simplificar: NÃO coloque ignore aqui, deixe o waitUser tratar.
-
     return Task(id, title, priority);
 }
 
@@ -54,17 +48,14 @@ void TaskView::showMessage(const std::string& msg) {
     std::cout << ">> " << msg << std::endl;
 }
 
-// ... (restante do código acima igual)
 
 void TaskView::clearScreen() {
-    // No Windows usa "cls", no Linux usaria "clear"
     system("cls"); 
 }
 
 void TaskView::waitUser() {
     std::cout << "\nPressione ENTER para continuar...";
     
-    // Limpa o buffer de entrada e espera uma tecla
     std::cin.ignore(); 
     std::cin.get(); 
 }

@@ -2,7 +2,7 @@
 *.exe
 *.o
 
-# Ignorar banco de dados local (opcional, mas recomendado)
+# Ignorar banco de dados local
 database.txt
 
 # Ignorar pasta do VS Code

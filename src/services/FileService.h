@@ -6,12 +6,10 @@
 
 class FileService {
 public:
-    // Salva todas as tarefas no arquivo database.txt
     static void saveTasks(const std::vector<Task>& tasks) {
         std::ofstream file("database.txt");
         if (file.is_open()) {
             for (const auto& task : tasks) {
-                // Formato: ID;Titulo;Prioridade
                 file << task.getId() << ";" 
                      << task.getTitle() << ";" 
                      << task.getPriority() << "\n";
@@ -20,7 +18,6 @@ public:
         }
     }
 
-    // Carrega as tarefas do arquivo ao iniciar o programa
     static std::vector<Task> loadTasks() {
         std::vector<Task> loadedTasks;
         std::ifstream file("database.txt");
@@ -32,7 +29,6 @@ public:
                 std::string segment;
                 std::vector<std::string> parts;
 
-                // Quebra a linha pelo caractere ';'
                 while (std::getline(ss, segment, ';')) {
                     parts.push_back(segment);
                 }
@@ -44,7 +40,6 @@ public:
                         int priority = std::stoi(parts[2]);
                         loadedTasks.push_back(Task(id, title, priority));
                     } catch (...) {
-                        // Ignora linhas corrompidas
                     }
                 }
             }

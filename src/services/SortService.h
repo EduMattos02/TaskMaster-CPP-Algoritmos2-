@@ -4,8 +4,7 @@
 
 class SortService {
 public:
-    // Algoritmo de Ordenação por Seleção (Selection Sort)
-    // Ordena por Prioridade (menor valor = maior prioridade)
+
     static void selectionSortByPriority(std::vector<Task>& tasks) {
         int n = tasks.size();
         for (int i = 0; i < n - 1; i++) {
@@ -15,14 +14,12 @@ public:
                     min_idx = j;
                 }
             }
-            // Troca manual (poderia usar std::swap)
             if (min_idx != i) {
                 std::swap(tasks[i], tasks[min_idx]);
             }
         }
     }
     
-    // Auxiliar para ordenar por ID (necessário para a busca binária funcionar)
     static void selectionSortById(std::vector<Task>& tasks) {
         int n = tasks.size();
         for (int i = 0; i < n - 1; i++) {

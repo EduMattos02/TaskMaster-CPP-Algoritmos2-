@@ -15,6 +15,5 @@ public:
     std::string getTitle() const;
     int getPriority() const;
 
-    // Método para exibir a tarefa formatada
     void display() const;
 };
